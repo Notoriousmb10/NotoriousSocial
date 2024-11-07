@@ -58,9 +58,22 @@ const Comment = () => {
             alt=""
             className="w-10 h-10 rounded-full ring-2 object-cover"
           />
-          <div className="flex flex-col gap-4">
-            <span className="font-medium">Chris Mark</span>
-            <span className="font-normal">The Wonder Woman</span>
+          <div className="flex flex-col gap-0">
+            <span className="font-medium pb-4">Chris Mark</span>
+
+            <span className="font-normal pb-1">The Wonder Woman</span>
+            <div className="flex flex-row gap-4">
+              <div
+                className="flex justify-center items-center gap-2 bg-slate-100
+            rounded-full  cursor-pointer"
+              >
+                <img src="/like.png" alt="" height={12} width={12} />
+                <span className="text-[12px]">
+                  <span className="text-gray-300">| </span> 23 likes
+                </span>
+                <span className="text-[12px]">Reply</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
