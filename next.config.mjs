@@ -2,7 +2,8 @@
 const nextConfig = {
   experimental: {
     reactCompiler: true,
-    ppr: 'incremental'
+    // Remove or comment out the ppr feature
+    // ppr: 'incremental'
   },
 };
 
