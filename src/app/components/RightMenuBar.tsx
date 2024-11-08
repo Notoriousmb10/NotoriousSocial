@@ -1,6 +1,8 @@
 import React from "react";
+import UserInfoCard from "./UserInfoCard";
+import UserMediaCard from "./UserMediaCard";
 
-const RightMenuBar = () => {
+const RightMenuBar = ({ userId }: { userId?: string }) => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-4 bg-white p-4 rounded-md">
@@ -91,7 +93,6 @@ const RightMenuBar = () => {
           </div>
         </div>
       </div>
-
       {/* Birthday */}
       <div className="bg-white p-4 flex flex-col gap-4">
         <div>
@@ -128,37 +129,41 @@ const RightMenuBar = () => {
           </div>
         </div>
       </div>
-
       {/* sponsored ads */}
       <div className="bg-white rounded-md p-4 flex flex-col gap-4">
         <div>
           <span className="text-slate-400 font-semibold">Sponsored Ads</span>
         </div>
         <div>
-          <img src="https://images.pexels.com/photos/207172/pexels-photo-207172.jpeg?auto=compress&cs=tinysrgb&w=600" 
-          className="rounded-md" alt="" />
+          <img
+            src="https://images.pexels.com/photos/207172/pexels-photo-207172.jpeg?auto=compress&cs=tinysrgb&w=600"
+            className="rounded-md"
+            alt=""
+          />
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
-          <img src="https://images.pexels.com/photos/207172/pexels-photo-207172.jpeg?auto=compress&cs=tinysrgb&w=600" 
-          className="rounded-full h-6 w-6 " alt="" />
-          <span className="text-blue-500 font-semibold">BigChef Lounge</span>
+            <img
+              src="https://images.pexels.com/photos/207172/pexels-photo-207172.jpeg?auto=compress&cs=tinysrgb&w=600"
+              className="rounded-full h-6 w-6 "
+              alt=""
+            />
+            <span className="text-blue-500 font-semibold">BigChef Lounge</span>
           </div>
-          <span className="text-slate-400 text-sm">Experience the best dining with a beautiful flower-themed ambiance.</span>
-          <button className="bg-slate-100 p-1 rounded-md hover:bg-slate-200 font-medium text-slate-500">Learn More</button>
+          <span className="text-slate-400 text-sm">
+            Experience the best dining with a beautiful flower-themed ambiance.
+          </span>
+          <button className="bg-slate-100 p-1 rounded-md hover:bg-slate-200 font-medium text-slate-500">
+            Learn More
+          </button>
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
+      <div className="p-4 rounded-md bg-white">
+        <UserInfoCard />
+      </div>
+      <div className="p-4 rounded-md bg-white">
+      <UserMediaCard />
+      </div>
     </div>
   );
 };
