@@ -73,7 +73,7 @@ const Navbar = () => {
           </SignedIn>
           <SignedOut>
             <Image src="/login.png" alt="" width={20} height={20}></Image>
-            <Link href="/sign-up">Login/Register</Link>
+            <Link href="/sign-in">Login/Register</Link>
           </SignedOut>
         </ClerkLoaded>
       </div>

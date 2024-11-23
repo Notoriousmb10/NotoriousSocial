@@ -1,10 +1,25 @@
+'use client'
+
+
 import Feed from "@/app/components/Feed";
 import LeftMenuBar from "@/app/components/LeftMenuBar";
 import RightMenuBar from "@/app/components/RightMenuBar";
 import Image from "next/image";
 import React from "react";
+import { useUser , SignIn } from '@clerk/nextjs';
 
 const page = () => {
+  const  { user, isSignedIn } = useUser();
+
+  if (!isSignedIn) {
+    return (
+      <div className="flex items-center justify-center h-[calc(100vh-96px)]">
+        <SignIn />
+      </div>
+    )
+  }
+
+
   return (
     <div className="flex gap-6 p-6 bg-slate-100">
        <div className="hidden xl:block w-[20%]">
@@ -28,7 +43,7 @@ const page = () => {
                 className="w-32 h-32 rounded-full absolute left-0 right-0 m-auto -bottom-16 ring-4 ring-white object-cover"
               />
             </div>
-            <h1 className="mt-20 mb-4 text-2xl font-medium">{"John Doe"}</h1>
+            <h1 className="mt-20 mb-4 text-2xl font-medium">{user.firstName}</h1>
             <div className="flex items-center justify-center gap-12 mb-4">
               <div className="flex flex-col items-center">
                 <span className="font-medium">10</span>
